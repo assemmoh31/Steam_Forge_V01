@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SteamProfileForge - Customize Your Profile</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              steam: {
-                bg: '#171a21',      // Very dark grey (Global background)
-                card: '#1b2838',    // Dark blue (Card background)
-                accent: '#2a475e',  // Medium blue (Header/Highlight)
-                blue: '#66c0f4',    // Bright blue (Text highlight/Links)
-                text: '#c6d4df',    // Light grey blue (Standard text)
-                green: '#a4d007',   // Steam Green
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SteamProfileForge - Customize Your Profile</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            steam: {
+              bg: '#171a21',      // Very dark grey (Global background)
+              card: '#1b2838',    // Dark blue (Card background)
+              accent: '#2a475e',  // Medium blue (Header/Highlight)
+              blue: '#66c0f4',    // Bright blue (Text highlight/Links)
+              text: '#c6d4df',    // Light grey blue (Standard text)
+              green: '#a4d007',   // Steam Green
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
           },
         },
-      };
-    </script>
-    <!-- Favicon (Tab Icon) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2366c0f4%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><path d=%22M12 16v-4%22/><path d=%22M12 8h.01%22/></svg>">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+      },
+    };
+  </script>
+  <!-- Favicon (Tab Icon) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2366c0f4%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><path d=%22M12 16v-4%22/><path d=%22M12 8h.01%22/></svg>">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/index.css">
   <script type="importmap">
 {
   "imports": {
@@ -48,9 +49,11 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-CjGXGsD2.js"></script>
+  <script type="module" crossorigin src="/Steam_Forge_V01/assets/index-CjGXGsD2.js"></script>
 </head>
-  <body class="bg-gray-100 text-gray-900 dark:bg-steam-bg dark:text-steam-text transition-colors duration-300">
-    <div id="root"></div>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-steam-bg dark:text-steam-text transition-colors duration-300">
+  <div id="root"></div>
 </body>
+
 </html>
