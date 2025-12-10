@@ -11,6 +11,11 @@ import TextGenerator from './components/TextGenerator';
 import AvatarBorders from './components/AvatarBorders';
 import LevelCalculator from './components/LevelCalculator';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import Footer from './components/Footer';
+import ProfileMockup from './components/ProfileMockup';
+import LongArtworkGuide from './components/LongArtworkGuide';
+import BadgeCollector from './components/BadgeCollector';
+import ColorMatcher from './components/ColorMatcher';
 
 const App: React.FC = () => {
   // Initialize theme state.
@@ -69,6 +74,18 @@ const App: React.FC = () => {
     } else if (path === '/privacy') {
       setCurrentPage('privacy');
       window.scrollTo(0, 0);
+    } else if (path === '/mockup') {
+      setCurrentPage('mockup');
+      window.scrollTo(0, 0);
+    } else if (path === '/long-images') {
+      setCurrentPage('long-images');
+      window.scrollTo(0, 0);
+    } else if (path === '/color-match') {
+      setCurrentPage('color-match');
+      window.scrollTo(0, 0);
+    } else if (path === '/badges') {
+      setCurrentPage('badges');
+      window.scrollTo(0, 0);
     } else {
       setCurrentPage('home');
       if (path.startsWith('#')) {
@@ -87,13 +104,13 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-steam-bg transition-colors duration-300 font-sans">
-      <Header 
-        isDarkMode={isDarkMode} 
-        toggleTheme={toggleTheme} 
+      <Header
+        isDarkMode={isDarkMode}
+        toggleTheme={toggleTheme}
         onNavigate={handleNavigate}
         currentPage={currentPage}
       />
-      
+
       <main className="flex-grow">
         {currentPage === 'splitter' ? (
           <ArtworkSplitter />
@@ -111,6 +128,14 @@ const App: React.FC = () => {
           <LevelCalculator />
         ) : currentPage === 'privacy' ? (
           <PrivacyPolicy />
+        ) : currentPage === 'mockup' ? (
+          <ProfileMockup />
+        ) : currentPage === 'long-images' ? (
+          <LongArtworkGuide />
+        ) : currentPage === 'color-match' ? (
+          <ColorMatcher />
+        ) : currentPage === 'badges' ? (
+          <BadgeCollector />
         ) : (
           <>
             <Hero onNavigate={handleNavigate} />
@@ -120,21 +145,7 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="py-8 bg-white dark:bg-steam-card border-t dark:border-steam-accent transition-colors duration-300">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 dark:text-steam-text text-sm mb-4">
-            © {new Date().getFullYear()} SteamProfileForge. Not affiliated with Valve Corporation.
-          </p>
-          <div className="flex justify-center gap-6 text-sm font-medium">
-             <button onClick={() => handleNavigate('/')} className="text-gray-500 hover:text-blue-600 dark:text-steam-text dark:hover:text-white transition-colors">
-               Home
-             </button>
-             <button onClick={() => handleNavigate('/privacy')} className="text-gray-500 hover:text-blue-600 dark:text-steam-text dark:hover:text-white transition-colors">
-               Privacy Policy
-             </button>
-          </div>
-        </div>
-      </footer>
+      <Footer currentPage={currentPage} onNavigate={handleNavigate} />
     </div>
   );
 };

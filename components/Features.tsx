@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Crop, Type, Image, Palette, Film, Zap, Calculator } from 'lucide-react';
+import { Crop, Type, Image, Palette, Film, Zap, Calculator, Monitor, Maximize2, Palette as PaletteIcon, Shield } from 'lucide-react';
 import { ToolFeature } from '../types';
 
 interface FeaturesProps {
@@ -21,6 +22,19 @@ const features: ToolFeature[] = [
     path: '/calculator',
   },
   {
+    title: 'Dressing Room',
+    description: 'Visualize frames, backgrounds, and avatars in a live mock-up environment.',
+    icon: Monitor,
+    popular: true,
+    path: '/mockup'
+  },
+  {
+    title: 'Color Matcher',
+    description: 'Find backgrounds that match your favorite color palette - Red, Blue, Purple etc.',
+    icon: PaletteIcon, // Using PaletteIcon as alias to avoid duplicate if needed, though Lucide exports Palette
+    path: '/color-match'
+  },
+  {
     title: 'Theme Finder',
     description: 'Search through thousands of steam backgrounds by color, popularity, or game price.',
     icon: Palette,
@@ -31,6 +45,12 @@ const features: ToolFeature[] = [
     description: 'Test how different avatar frames look with your current profile picture.',
     icon: Image,
     path: '/avatar-borders',
+  },
+  {
+    title: 'Long Images Code',
+    description: 'Get the exact console code needed to upload Extra Long artwork to Steam.',
+    icon: Maximize2,
+    path: '/long-images'
   },
   {
     title: 'Text Generator',
@@ -50,6 +70,12 @@ const features: ToolFeature[] = [
     icon: Zap,
     path: '/optimizer',
   },
+  {
+    title: 'Badge Collector',
+    description: 'View your entire Steam badge collection sorted by newest first.',
+    icon: Shield,
+    path: '/badges',
+  },
 ];
 
 const Features: React.FC<FeaturesProps> = ({ onNavigate }) => {
@@ -68,14 +94,14 @@ const Features: React.FC<FeaturesProps> = ({ onNavigate }) => {
             <div
               key={feature.title}
               onClick={() => onNavigate(feature.path)}
-              className="cursor-pointer group relative p-6 bg-gray-50 dark:bg-steam-card rounded-2xl border border-gray-100 dark:border-white/5 hover:border-blue-500/50 dark:hover:border-steam-blue transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
+              className="cursor-pointer group relative p-6 bg-gray-50 dark:bg-steam-card rounded-2xl border border-gray-100 dark:border-white/5 hover:border-blue-500/50 dark:hover:border-steam-blue transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
             >
               {feature.popular && (
-                <span className="absolute top-4 right-4 px-2 py-1 bg-steam-green text-xs font-bold text-white rounded uppercase tracking-wider">
+                <span className="absolute top-4 right-4 px-2 py-1 bg-steam-green text-xs font-bold text-white rounded uppercase tracking-wider shadow-lg">
                   Popular
                 </span>
               )}
-              
+
               <div className="w-12 h-12 bg-blue-100 dark:bg-steam-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-6 h-6 text-blue-600 dark:text-steam-blue" />
               </div>
@@ -83,8 +109,8 @@ const Features: React.FC<FeaturesProps> = ({ onNavigate }) => {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-steam-blue transition-colors">
                 {feature.title}
               </h3>
-              
-              <p className="text-gray-600 dark:text-steam-text/80 leading-relaxed">
+
+              <p className="text-gray-600 dark:text-steam-text/80 leading-relaxed text-sm">
                 {feature.description}
               </p>
             </div>
