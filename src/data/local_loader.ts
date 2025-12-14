@@ -60,7 +60,8 @@ export const LOCAL_BACKGROUNDS: BackgroundItem[] = SIMPLE_BACKGROUNDS.map((bg, i
         title: bg.name,
         game: 'Steam Points Shop',
         gameId: rewardId, // Store the Reward ID here
-        imageUrl: bg.image,
+        // Fix for GitHub Pages: Remove leading slash to make path relative
+        imageUrl: bg.image.startsWith('/') ? bg.image.slice(1) : bg.image,
         price: 'N/A',
         tags: Array.from(new Set([...generateTags(bg.name), ...((bg as any).tags || [])]))
     };

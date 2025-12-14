@@ -40,12 +40,23 @@ const FALLBACK_THEMES = [
 ];
 
 // Optimized Image Component
+// Optimized Image Component
 const ThemeImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
-  const [imgSrc, setImgSrc] = useState(src);
+  // Resolve path: If http/data, use as is. If local, prepend Base URL.
+  const resolvedSrc = React.useMemo(() => {
+    if (!src) return '';
+    if (src.startsWith('http') || src.startsWith('data:')) return src;
+
+    // Remove leading slash if present to make it truly relative to base
+    const cleanPath = src.startsWith('/') ? src.slice(1) : src;
+    return (import.meta.env.BASE_URL || '/') + cleanPath;
+  }, [src]);
+
+  const [imgSrc, setImgSrc] = useState(resolvedSrc);
 
   useEffect(() => {
-    setImgSrc(src);
-  }, [src]);
+    setImgSrc(resolvedSrc);
+  }, [resolvedSrc]);
 
   return (
     <div className="w-full h-full relative bg-gray-200 dark:bg-gray-800 overflow-hidden">
@@ -54,9 +65,8 @@ const ThemeImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
         alt={alt}
         loading="lazy"
         onError={(e) => {
-          console.warn('Image failed to load:', src);
-          e.currentTarget.onerror = null; // Prevent loop
-          // Fallback to specific static image if local fails
+          console.warn('Image failed to load:', resolvedSrc);
+          e.currentTarget.onerror = null;
           if (!imgSrc.startsWith('http')) {
             setImgSrc(FALLBACK_THEMES[0]);
           }

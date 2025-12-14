@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Moon, Sun, Menu, X, ChevronDown, Monitor, Palette, Wand2, Calculator, Image as ImageIcon, Video, Scissors, Type } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronDown, Monitor, Palette, Wand2, Calculator, Image as ImageIcon, Video, Scissors, Type, Download, Users } from 'lucide-react';
 import logoDark from '@/assets/logo-v3.png';
 import logoLight from '@/assets/logo-light-v2.png';
 
@@ -32,6 +32,7 @@ const NAV_GROUPS = [
       { label: 'Text Generator', href: '/text-generator', icon: <Type className="w-4 h-4" /> },
       { label: 'Artwork Splitter', href: '/splitter', icon: <Scissors className="w-4 h-4" /> },
       { label: 'Long Images', href: '/long-images', icon: <ImageIcon className="w-4 h-4" /> },
+      { label: 'Community Artwork', href: '/community-artwork', icon: <Users className="w-4 h-4" /> },
     ]
   },
   {

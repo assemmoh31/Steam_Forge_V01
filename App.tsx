@@ -16,6 +16,9 @@ import ProfileMockup from './components/ProfileMockup';
 import LongArtworkGuide from './components/LongArtworkGuide';
 import BadgeCollector from './components/BadgeCollector';
 import ColorMatcher from './components/ColorMatcher';
+import CommunityArtwork from './components/CommunityArtwork';
+
+
 
 const App: React.FC = () => {
   // Initialize theme state.
@@ -86,6 +89,10 @@ const App: React.FC = () => {
     } else if (path === '/badges') {
       setCurrentPage('badges');
       window.scrollTo(0, 0);
+    } else if (path === '/community-artwork') {
+      setCurrentPage('community-artwork');
+      window.scrollTo(0, 0);
+
     } else {
       setCurrentPage('home');
       if (path.startsWith('#')) {
@@ -136,6 +143,9 @@ const App: React.FC = () => {
           <ColorMatcher />
         ) : currentPage === 'badges' ? (
           <BadgeCollector />
+        ) : currentPage === 'community-artwork' ? (
+          <CommunityArtwork />
+
         ) : (
           <>
             <Hero onNavigate={handleNavigate} />

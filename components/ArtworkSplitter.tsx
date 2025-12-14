@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Upload, Download, Image as ImageIcon, Info, CheckCircle2, Film, Loader2, Scissors, Monitor, LayoutGrid, Package } from 'lucide-react';
+import { Upload, Download, Image as ImageIcon, Info, CheckCircle2, Film, Loader2, Scissors, Monitor, LayoutGrid, Package, HelpCircle, Copy, AlertTriangle } from 'lucide-react';
 // @ts-ignore
 import { parseGIF, decompressFrames } from 'gifuct-js';
 // @ts-ignore
@@ -10,10 +10,10 @@ import AdUnit from './AdUnit';
 
 // Define a type for the frame object returned by gifuct-js
 interface GifFrame {
-    dims: { width: number; height: number; top: number; left: number };
-    patch: Uint8ClampedArray;
-    delay: number;
-    disposalType: number;
+  dims: { width: number; height: number; top: number; left: number };
+  patch: Uint8ClampedArray;
+  delay: number;
+  disposalType: number;
 }
 
 interface ExtractedFrame {
@@ -28,7 +28,7 @@ const ArtworkSplitter: React.FC = () => {
   const [fileName, setFileName] = useState<string>('');
   const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
   // GIF Handling
   const [isGif, setIsGif] = useState(false);
   const [extractedFrames, setExtractedFrames] = useState<ExtractedFrame[]>([]);
@@ -37,15 +37,17 @@ const ArtworkSplitter: React.FC = () => {
   const [processingStatus, setProcessingStatus] = useState<string>('');
   const [isEncoding, setIsEncoding] = useState(false);
   const [keepAnimation, setKeepAnimation] = useState(true);
-  
+
   // Modes
   const [cropMode, setCropMode] = useState<CropMode>('artwork');
   const [workshopCols, setWorkshopCols] = useState<number>(5);
-  
+
   // Steam Artwork Dimensions
   const MAIN_WIDTH = 506;
   const SIDE_WIDTH = 100;
-  
+
+  const [showGuide, setShowGuide] = useState(false);
+
   // Clean up blob URLs when component unmounts or image changes
   useEffect(() => {
     return () => {
@@ -56,26 +58,26 @@ const ArtworkSplitter: React.FC = () => {
   const processFile = (file: File) => {
     const url = URL.createObjectURL(file);
     const img = new Image();
-    
+
     // Reset state
     setExtractedFrames([]);
     setIsGif(false);
     setKeepAnimation(true);
     setProcessingProgress(0);
     setProcessingStatus('');
-    
+
     img.onload = () => {
       setImageDimensions({ width: img.width, height: img.height });
       setImage(url);
       setFileName(file.name.split('.')[0]);
-      
+
       // Auto-detect mode based on width
       if (img.width >= 1920) {
         setCropMode('background');
       } else {
         setCropMode('artwork');
       }
-      
+
       if (file.type === 'image/gif') {
         setIsGif(true);
         processGifFrames(url);
@@ -99,7 +101,7 @@ const ArtworkSplitter: React.FC = () => {
     setIsProcessingGif(true);
     setProcessingProgress(0);
     setProcessingStatus('Analyzing GIF structure...');
-    
+
     try {
       const response = await fetch(fileUrl);
       const buffer = await response.arrayBuffer();
@@ -108,62 +110,62 @@ const ArtworkSplitter: React.FC = () => {
 
       // Canvas to compose frames
       const compositionCanvas = document.createElement('canvas');
-      const header = gif.lsd; 
+      const header = gif.lsd;
       compositionCanvas.width = header.width;
       compositionCanvas.height = header.height;
       const ctx = compositionCanvas.getContext('2d', { willReadFrequently: true });
-      
+
       if (!ctx) return;
 
       const newFrames: ExtractedFrame[] = [];
       const totalFrames = frames.length;
-      
+
       let lastYieldTime = performance.now();
-      
+
       for (let i = 0; i < totalFrames; i++) {
         const frame = frames[i];
         const { width, height, top, left } = frame.dims;
-        
-        if (width > 0 && height > 0) {
-           // Optimization: Use createImageBitmap directly from ImageData
-           const imageData = new ImageData(
-               new Uint8ClampedArray(frame.patch),
-               width,
-               height
-           );
-           
-           const bitmap = await createImageBitmap(imageData);
-           ctx.drawImage(bitmap, left, top);
-           bitmap.close(); 
-           
-           // Optimization: Use WebP for blobs
-           const blob = await new Promise<Blob | null>(resolve => 
-             compositionCanvas.toBlob(resolve, 'image/webp', 0.8)
-           );
 
-           if (blob) {
-             newFrames.push({
-               url: URL.createObjectURL(blob),
-               delay: frame.delay
-             });
-           }
-           
-           // Handle 'Restore to Background' disposal (Type 2)
-           if (frame.disposalType === 2) {
-               ctx.clearRect(left, top, width, height);
-           }
+        if (width > 0 && height > 0) {
+          // Optimization: Use createImageBitmap directly from ImageData
+          const imageData = new ImageData(
+            new Uint8ClampedArray(frame.patch),
+            width,
+            height
+          );
+
+          const bitmap = await createImageBitmap(imageData);
+          ctx.drawImage(bitmap, left, top);
+          bitmap.close();
+
+          // Optimization: Use WebP for blobs
+          const blob = await new Promise<Blob | null>(resolve =>
+            compositionCanvas.toBlob(resolve, 'image/webp', 0.8)
+          );
+
+          if (blob) {
+            newFrames.push({
+              url: URL.createObjectURL(blob),
+              delay: frame.delay
+            });
+          }
+
+          // Handle 'Restore to Background' disposal (Type 2)
+          if (frame.disposalType === 2) {
+            ctx.clearRect(left, top, width, height);
+          }
         }
-        
+
         // Time-based yielding
         const now = performance.now();
         if (now - lastYieldTime > 12) {
-           setProcessingProgress(Math.round((i / totalFrames) * 100));
-           setProcessingStatus(`Extracting frame ${i + 1} of ${totalFrames}...`);
-           await new Promise(resolve => setTimeout(resolve, 0));
-           lastYieldTime = performance.now();
+          setProcessingProgress(Math.round((i / totalFrames) * 100));
+          setProcessingStatus(`Extracting frame ${i + 1} of ${totalFrames}...`);
+          await new Promise(resolve => setTimeout(resolve, 0));
+          lastYieldTime = performance.now();
         }
       }
-      
+
       setExtractedFrames(newFrames);
       setProcessingProgress(100);
       setProcessingStatus('Frames extracted successfully');
@@ -183,60 +185,60 @@ const ArtworkSplitter: React.FC = () => {
     const { width: imgW, height: imgH } = imageDimensions;
 
     if (cropMode === 'workshop' && typeof type === 'number') {
-        const index = type;
-        const partWidth = imgW / workshopCols;
-        return {
-            x: Math.floor(partWidth * index),
-            y: 0,
-            w: Math.floor(partWidth),
-            h: imgH
-        };
+      const index = type;
+      const partWidth = imgW / workshopCols;
+      return {
+        x: Math.floor(partWidth * index),
+        y: 0,
+        w: Math.floor(partWidth),
+        h: imgH
+      };
     }
 
     if (cropMode === 'artwork' || cropMode === 'background') {
-        let x = 0;
-        let w = MAIN_WIDTH;
-        
-        if (cropMode === 'background') {
-            if (type === 'main') x = 508;
-            if (type === 'side') { x = 1022; w = SIDE_WIDTH; }
-        } else {
-            // Artwork Mode
-            if (type === 'main') x = 0;
-            if (type === 'side') { 
-                x = 506 + 8; // Main width + gap
-                w = SIDE_WIDTH; 
-                if (imgW < 700) x = imgW - SIDE_WIDTH; // Fallback for smaller images
-            }
+      let x = 0;
+      let w = MAIN_WIDTH;
+
+      if (cropMode === 'background') {
+        if (type === 'main') x = 508;
+        if (type === 'side') { x = 1022; w = SIDE_WIDTH; }
+      } else {
+        // Artwork Mode
+        if (type === 'main') x = 0;
+        if (type === 'side') {
+          x = 506 + 8; // Main width + gap
+          w = SIDE_WIDTH;
+          if (imgW < 700) x = imgW - SIDE_WIDTH; // Fallback for smaller images
         }
-        return { x, y: 0, w, h: imgH };
+      }
+      return { x, y: 0, w, h: imgH };
     }
-    
+
     return null;
   };
 
   /**
    * Renders a static PNG blob for a specific crop region
    */
-  const renderPngBlob = (rect: {x: number, y: number, w: number, h: number}): Promise<Blob | null> => {
+  const renderPngBlob = (rect: { x: number, y: number, w: number, h: number }): Promise<Blob | null> => {
     return new Promise((resolve) => {
-        const canvas = document.createElement('canvas');
-        canvas.width = rect.w;
-        canvas.height = rect.h;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) { resolve(null); return; }
+      const canvas = document.createElement('canvas');
+      canvas.width = rect.w;
+      canvas.height = rect.h;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) { resolve(null); return; }
 
-        const sourceUrl = (isGif && extractedFrames.length > 0) ? extractedFrames[0].url : image;
-        if (!sourceUrl) { resolve(null); return; }
+      const sourceUrl = (isGif && extractedFrames.length > 0) ? extractedFrames[0].url : image;
+      if (!sourceUrl) { resolve(null); return; }
 
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => {
-            ctx.drawImage(img, -rect.x, -rect.y);
-            canvas.toBlob((blob) => resolve(blob), 'image/png');
-        };
-        img.onerror = () => resolve(null);
-        img.src = sourceUrl;
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        ctx.drawImage(img, -rect.x, -rect.y);
+        canvas.toBlob((blob) => resolve(blob), 'image/png');
+      };
+      img.onerror = () => resolve(null);
+      img.src = sourceUrl;
     });
   };
 
@@ -245,10 +247,10 @@ const ArtworkSplitter: React.FC = () => {
    */
   const renderGifBlob = async (x: number, y: number, width: number, height: number, statusPrefix: string = ''): Promise<Blob | null> => {
     if (!extractedFrames.length) return null;
-    
+
     try {
       const encoder = new GIFEncoder();
-      
+
       const canvas = document.createElement('canvas');
       canvas.width = width;
       canvas.height = height;
@@ -257,21 +259,21 @@ const ArtworkSplitter: React.FC = () => {
 
       const totalFrames = extractedFrames.length;
       let lastYieldTime = performance.now();
-      
+
       for (let i = 0; i < totalFrames; i++) {
         const frame = extractedFrames[i];
-        
+
         // Optimization: Fetch blob and create bitmap directly
         const response = await fetch(frame.url);
         const blob = await response.blob();
         const bitmap = await createImageBitmap(blob);
-        
+
         const delay = frame.delay || 100;
 
         ctx.clearRect(0, 0, width, height);
         // Draw the full frame shifted by negative X/Y to crop
         ctx.drawImage(bitmap, -x, -y);
-        bitmap.close(); 
+        bitmap.close();
 
         const imageData = ctx.getImageData(0, 0, width, height);
         const data = imageData.data;
@@ -279,19 +281,19 @@ const ArtworkSplitter: React.FC = () => {
         const palette = quantize(data, 256);
         const index = applyPalette(data, palette);
 
-        encoder.writeFrame(index, width, height, { 
-          palette, 
+        encoder.writeFrame(index, width, height, {
+          palette,
           delay: Math.round(delay / 10) // ms to centiseconds
         });
-        
+
         // Time-based yielding to update UI
         const now = performance.now();
         if (now - lastYieldTime > 12) {
-           setProcessingProgress(Math.round((i / totalFrames) * 100));
-           const statusText = statusPrefix ? `${statusPrefix}: Frame ${i + 1}/${totalFrames}` : `Encoding frame ${i + 1}/${totalFrames}...`;
-           setProcessingStatus(statusText);
-           await new Promise(resolve => setTimeout(resolve, 0));
-           lastYieldTime = performance.now();
+          setProcessingProgress(Math.round((i / totalFrames) * 100));
+          const statusText = statusPrefix ? `${statusPrefix}: Frame ${i + 1}/${totalFrames}` : `Encoding frame ${i + 1}/${totalFrames}...`;
+          setProcessingStatus(statusText);
+          await new Promise(resolve => setTimeout(resolve, 0));
+          lastYieldTime = performance.now();
         }
       }
 
@@ -314,7 +316,7 @@ const ArtworkSplitter: React.FC = () => {
 
     const rect = getCropRect(type);
     if (!rect) return;
-    
+
     // Determine suffix
     let suffix = '';
     if (typeof type === 'number') suffix = `part_${type + 1}`;
@@ -326,25 +328,27 @@ const ArtworkSplitter: React.FC = () => {
       const blob = await renderGifBlob(rect.x, rect.y, rect.w, rect.h, `Generating ${suffix}`);
       setIsEncoding(false);
       setProcessingStatus('');
-      
+
       if (blob) {
-         saveBlob(blob, `${fileName}_${suffix}.gif`);
+        saveBlob(blob, `${fileName}_${suffix}.gif`);
       }
     } else {
       const blob = await renderPngBlob(rect);
       if (blob) {
-         saveBlob(blob, `${fileName}_${suffix}.png`);
+        saveBlob(blob, `${fileName}_${suffix}.png`);
       }
     }
   };
 
   const saveBlob = (blob: Blob, name: string) => {
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.download = name;
-      link.href = url;
-      link.click();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.download = name;
+    link.href = url;
+    link.click(); // Reverting to simple click without appendChild if preferred, or keep appendChild. 
+    // Since user complained about screenshot tool, I'll just restore this to a known working state for ArtworkSplitter.
+    // The previous known working state WAS simple click.
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
   const downloadFrame = (frameDataUrl: string, index: number) => {
@@ -366,65 +370,65 @@ const ArtworkSplitter: React.FC = () => {
     setProcessingProgress(0);
 
     const zip = new JSZip();
-    
+
     // Determine which parts to include
-    const partsToProcess: Array<{id: string | number, name: string}> = [];
-    
+    const partsToProcess: Array<{ id: string | number, name: string }> = [];
+
     if (cropMode === 'workshop') {
-        for (let i = 0; i < workshopCols; i++) {
-            partsToProcess.push({ id: i, name: `part_${i + 1}` });
-        }
+      for (let i = 0; i < workshopCols; i++) {
+        partsToProcess.push({ id: i, name: `part_${i + 1}` });
+      }
     } else {
-        // Updated naming to sequential parts for ZIP download
-        partsToProcess.push({ id: 'main', name: 'part_1' });
-        partsToProcess.push({ id: 'side', name: 'part_2' });
+      // Updated naming to sequential parts for ZIP download
+      partsToProcess.push({ id: 'main', name: 'part_1' });
+      partsToProcess.push({ id: 'side', name: 'part_2' });
     }
 
     try {
-        const ext = (isGif && keepAnimation) ? 'gif' : 'png';
+      const ext = (isGif && keepAnimation) ? 'gif' : 'png';
 
-        for (let i = 0; i < partsToProcess.length; i++) {
-            const part = partsToProcess[i];
-            const rect = getCropRect(part.id as any);
-            
-            if (rect) {
-                // Update status for the current part
-                const stepPrefix = `Processing ${part.name} (${i + 1}/${partsToProcess.length})`;
-                setProcessingStatus(stepPrefix);
-                
-                let blob: Blob | null = null;
-                
-                if (isGif && keepAnimation) {
-                    blob = await renderGifBlob(rect.x, rect.y, rect.w, rect.h, stepPrefix);
-                } else {
-                    blob = await renderPngBlob(rect);
-                    // Minimal delay for UI updates if purely synchronous
-                    await new Promise(r => setTimeout(r, 50)); 
-                }
+      for (let i = 0; i < partsToProcess.length; i++) {
+        const part = partsToProcess[i];
+        const rect = getCropRect(part.id as any);
 
-                if (blob) {
-                    // Use clean filenames inside the zip (e.g., part_1.gif)
-                    zip.file(`${part.name}.${ext}`, blob);
-                }
-            }
+        if (rect) {
+          // Update status for the current part
+          const stepPrefix = `Processing ${part.name} (${i + 1}/${partsToProcess.length})`;
+          setProcessingStatus(stepPrefix);
+
+          let blob: Blob | null = null;
+
+          if (isGif && keepAnimation) {
+            blob = await renderGifBlob(rect.x, rect.y, rect.w, rect.h, stepPrefix);
+          } else {
+            blob = await renderPngBlob(rect);
+            // Minimal delay for UI updates if purely synchronous
+            await new Promise(r => setTimeout(r, 50));
+          }
+
+          if (blob) {
+            // Use clean filenames inside the zip (e.g., part_1.gif)
+            zip.file(`${part.name}.${ext}`, blob);
+          }
         }
+      }
 
-        setProcessingStatus('Compressing archive...');
-        const zipContent = await zip.generateAsync({ type: "blob" });
-        saveBlob(zipContent, `${fileName}_Showcase.zip`);
+      setProcessingStatus('Compressing archive...');
+      const zipContent = await zip.generateAsync({ type: "blob" });
+      saveBlob(zipContent, `${fileName}_Showcase.zip`);
 
     } catch (error) {
-        console.error("Batch download failed", error);
-        alert("Failed to create ZIP archive.");
+      console.error("Batch download failed", error);
+      alert("Failed to create ZIP archive.");
     } finally {
-        setIsEncoding(false);
-        setProcessingStatus('');
-        setProcessingProgress(0);
+      setIsEncoding(false);
+      setProcessingStatus('');
+      setProcessingProgress(0);
     }
   };
 
-  const previewSource = (isGif && !keepAnimation && extractedFrames.length > 0) 
-    ? extractedFrames[0].url 
+  const previewSource = (isGif && !keepAnimation && extractedFrames.length > 0)
+    ? extractedFrames[0].url
     : image;
 
   return (
@@ -443,7 +447,7 @@ const ArtworkSplitter: React.FC = () => {
         <div className="max-w-6xl mx-auto bg-white dark:bg-steam-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-steam-accent">
           <div className="p-8">
             {!image ? (
-              <div 
+              <div
                 className="border-2 border-dashed border-gray-300 dark:border-steam-accent rounded-xl p-16 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 dark:hover:border-steam-blue transition-colors bg-gray-50 dark:bg-steam-bg/50 group"
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={handleDrop}
@@ -466,241 +470,249 @@ const ArtworkSplitter: React.FC = () => {
               <div className="flex flex-col gap-8">
                 {/* Control Bar */}
                 <div className="flex flex-col xl:flex-row items-center justify-between gap-6 pb-6 border-b border-gray-200 dark:border-white/10">
-                   <div className="flex items-center gap-4 w-full xl:w-auto">
-                     <div className="p-3 bg-gray-100 dark:bg-steam-bg rounded-lg shrink-0">
-                        <ImageIcon className="w-6 h-6 text-gray-500 dark:text-steam-text" />
-                     </div>
-                     <div className="overflow-hidden">
-                        <div className="flex items-center gap-2">
-                             <h4 className="font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">{fileName}</h4>
-                             {isGif && <span className="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-[10px] font-bold uppercase rounded border border-purple-200 dark:border-purple-800">GIF</span>}
-                        </div>
-                        <p className="text-sm text-gray-500 dark:text-steam-text">
-                            {imageDimensions?.width} x {imageDimensions?.height}px
-                        </p>
-                     </div>
-                   </div>
-                   
-                   <div className="flex flex-wrap items-center gap-3 justify-center w-full xl:w-auto">
-                     {/* Mode Toggles */}
-                     <div className="flex bg-gray-100 dark:bg-black/20 p-1 rounded-lg overflow-x-auto max-w-full">
-                        <button
-                          onClick={() => setCropMode('artwork')}
-                          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'artwork' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
+                  <div className="flex items-center gap-4 w-full xl:w-auto">
+                    <div className="p-3 bg-gray-100 dark:bg-steam-bg rounded-lg shrink-0">
+                      <ImageIcon className="w-6 h-6 text-gray-500 dark:text-steam-text" />
+                    </div>
+                    <div className="overflow-hidden">
+                      <div className="flex items-center gap-2">
+                        <h4 className="font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">{fileName}</h4>
+                        {isGif && <span className="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-[10px] font-bold uppercase rounded border border-purple-200 dark:border-purple-800">GIF</span>}
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-steam-text">
+                        {imageDimensions?.width} x {imageDimensions?.height}px
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-3 justify-center w-full xl:w-auto">
+                    {/* Mode Toggles */}
+                    <div className="flex bg-gray-100 dark:bg-black/20 p-1 rounded-lg overflow-x-auto max-w-full">
+                      <button
+                        onClick={() => setCropMode('artwork')}
+                        className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'artwork' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
+                      >
+                        <Scissors className="w-3 h-3" /> Artwork
+                      </button>
+                      <button
+                        onClick={() => setCropMode('background')}
+                        className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'background' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
+                      >
+                        <Monitor className="w-3 h-3" /> Background
+                      </button>
+                      <button
+                        onClick={() => setCropMode('workshop')}
+                        className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'workshop' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
+                      >
+                        <LayoutGrid className="w-3 h-3" /> Workshop
+                      </button>
+                    </div>
+
+                    {/* Workshop Controls */}
+                    {cropMode === 'workshop' && (
+                      <div className="flex items-center gap-2 bg-gray-100 dark:bg-black/20 p-1 rounded-lg px-2">
+                        <span className="text-xs text-gray-500 font-medium uppercase">Parts:</span>
+                        <select
+                          value={workshopCols}
+                          onChange={(e) => setWorkshopCols(Number(e.target.value))}
+                          className="bg-transparent text-sm font-bold text-gray-900 dark:text-white focus:outline-none cursor-pointer"
                         >
-                            <Scissors className="w-3 h-3" /> Artwork
+                          <option value="2" className="text-gray-900">2</option>
+                          <option value="4" className="text-gray-900">4</option>
+                          <option value="5" className="text-gray-900">5</option>
+                          <option value="6" className="text-gray-900">6</option>
+                          <option value="8" className="text-gray-900">8</option>
+                        </select>
+                      </div>
+                    )}
+
+                    {/* Format Toggle for GIFs */}
+                    {isGif && (
+                      <div className="flex bg-gray-100 dark:bg-black/20 p-1 rounded-lg">
+                        <button
+                          onClick={() => setKeepAnimation(true)}
+                          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${keepAnimation ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text'}`}
+                        >
+                          GIF
                         </button>
                         <button
-                          onClick={() => setCropMode('background')}
-                          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'background' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
+                          onClick={() => setKeepAnimation(false)}
+                          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${!keepAnimation ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text'}`}
                         >
-                            <Monitor className="w-3 h-3" /> Background
+                          PNG
                         </button>
-                        <button
-                          onClick={() => setCropMode('workshop')}
-                          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-all ${cropMode === 'workshop' ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text hover:text-gray-900 dark:hover:text-white'}`}
-                        >
-                            <LayoutGrid className="w-3 h-3" /> Workshop
-                        </button>
-                     </div>
+                      </div>
+                    )}
 
-                     {/* Workshop Controls */}
-                     {cropMode === 'workshop' && (
-                        <div className="flex items-center gap-2 bg-gray-100 dark:bg-black/20 p-1 rounded-lg px-2">
-                           <span className="text-xs text-gray-500 font-medium uppercase">Parts:</span>
-                           <select 
-                             value={workshopCols}
-                             onChange={(e) => setWorkshopCols(Number(e.target.value))}
-                             className="bg-transparent text-sm font-bold text-gray-900 dark:text-white focus:outline-none cursor-pointer"
-                           >
-                              <option value="2" className="text-gray-900">2</option>
-                              <option value="4" className="text-gray-900">4</option>
-                              <option value="5" className="text-gray-900">5</option>
-                              <option value="6" className="text-gray-900">6</option>
-                              <option value="8" className="text-gray-900">8</option>
-                           </select>
-                        </div>
-                     )}
+                    <button
+                      onClick={handleDownloadAll}
+                      disabled={isEncoding || isProcessingGif || (isGif && keepAnimation && extractedFrames.length === 0)}
+                      className={`flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-blue-600/20 ${(isEncoding || isProcessingGif) ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      {(isEncoding || isProcessingGif) ? <Loader2 className="w-4 h-4 animate-spin" /> : <Package className="w-4 h-4" />}
+                      Download All (ZIP)
+                    </button>
 
-                     {/* Format Toggle for GIFs */}
-                     {isGif && (
-                       <div className="flex bg-gray-100 dark:bg-black/20 p-1 rounded-lg">
-                          <button
-                            onClick={() => setKeepAnimation(true)}
-                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${keepAnimation ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text'}`}
-                          >
-                            GIF
-                          </button>
-                          <button
-                            onClick={() => setKeepAnimation(false)}
-                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${!keepAnimation ? 'bg-white dark:bg-steam-accent shadow text-blue-600 dark:text-white' : 'text-gray-500 dark:text-steam-text'}`}
-                          >
-                            PNG
-                          </button>
-                       </div>
-                     )}
+                    <button
+                      onClick={() => setImage(null)}
+                      className="px-3 py-2 text-sm text-red-500 hover:text-red-600 font-medium hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                    >
+                      Reset
+                    </button>
 
-                     <button
-                       onClick={handleDownloadAll}
-                       disabled={isEncoding || isProcessingGif || (isGif && keepAnimation && extractedFrames.length === 0)}
-                       className={`flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors shadow-lg shadow-blue-600/20 ${(isEncoding || isProcessingGif) ? 'opacity-50 cursor-not-allowed' : ''}`}
-                     >
-                       {(isEncoding || isProcessingGif) ? <Loader2 className="w-4 h-4 animate-spin" /> : <Package className="w-4 h-4" />}
-                       Download All (ZIP)
-                     </button>
-                     
-                     <button 
-                       onClick={() => setImage(null)}
-                       className="px-3 py-2 text-sm text-red-500 hover:text-red-600 font-medium hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
-                     >
-                       Reset
-                     </button>
-                   </div>
+                    <button
+                      onClick={() => setShowGuide(true)}
+                      className="flex items-center gap-2 px-3 py-2 text-sm text-yellow-600 hover:text-yellow-700 font-medium hover:bg-yellow-50 dark:text-yellow-500 dark:hover:bg-yellow-900/20 rounded-lg transition-colors"
+                      title="How to Upload?"
+                    >
+                      <HelpCircle className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
 
                 {/* Progress Bar & Status */}
                 {(isProcessingGif || isEncoding) && (
-                   <div className="space-y-2">
-                       <div className="flex justify-between text-xs sm:text-sm text-gray-600 dark:text-steam-text font-medium">
-                           <span className="flex items-center gap-2">
-                               <Loader2 className="w-3 h-3 animate-spin" />
-                               {processingStatus}
-                           </span>
-                           <span>{processingProgress}%</span>
-                       </div>
-                       <div className="w-full bg-gray-200 dark:bg-white/10 rounded-full h-2 overflow-hidden">
-                          <div 
-                            className="bg-blue-600 h-full transition-all duration-300 ease-out"
-                            style={{ width: `${processingProgress}%` }}
-                          ></div>
-                       </div>
-                   </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs sm:text-sm text-gray-600 dark:text-steam-text font-medium">
+                      <span className="flex items-center gap-2">
+                        <Loader2 className="w-3 h-3 animate-spin" />
+                        {processingStatus}
+                      </span>
+                      <span>{processingProgress}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-white/10 rounded-full h-2 overflow-hidden">
+                      <div
+                        className="bg-blue-600 h-full transition-all duration-300 ease-out"
+                        style={{ width: `${processingProgress}%` }}
+                      ></div>
+                    </div>
+                  </div>
                 )}
 
                 {/* Preview Area */}
                 <div className="relative w-full overflow-x-auto bg-gray-900/50 rounded-xl p-8 custom-scrollbar min-h-[400px] flex items-center">
                   <div className="min-w-[800px] w-full flex justify-center">
-                    
+
                     {/* WORKSHOP GRID PREVIEW */}
                     {cropMode === 'workshop' ? (
-                        <div className="flex gap-1">
-                            {Array.from({ length: workshopCols }).map((_, i) => {
-                                const rect = getCropRect(i);
-                                if (!rect) return null;
-                                return (
-                                    <div key={i} className="relative group">
-                                        <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
-                                            Part {i + 1}
-                                        </div>
-                                        <div 
-                                            className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
-                                            style={{ width: `${Math.floor(800 / workshopCols)}px`, height: 'auto' }}
-                                        >
-                                            <div style={{
-                                                position: 'relative',
-                                                paddingBottom: `${(rect.h / rect.w) * 100}%`,
-                                                width: '100%'
-                                            }}>
-                                                <img 
-                                                    src={previewSource || ''} 
-                                                    alt={`Part ${i}`} 
-                                                    style={{ 
-                                                        position: 'absolute',
-                                                        top: 0,
-                                                        left: 0,
-                                                        maxWidth: 'none',
-                                                        width: `${(imageDimensions!.width / rect.w) * 100}%`,
-                                                        height: '100%',
-                                                        transform: `translateX(-${(i / workshopCols) * 100}%)` // Shift image
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                        <button 
-                                            onClick={() => downloadSegment(i)}
-                                            disabled={isEncoding || isProcessingGif}
-                                            className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
-                                        >
-                                            <div className="flex items-center gap-2 text-white font-semibold px-3 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                                <Download className="w-4 h-4" />
-                                            </div>
-                                        </button>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                      <div className="flex gap-1">
+                        {Array.from({ length: workshopCols }).map((_, i) => {
+                          const rect = getCropRect(i);
+                          if (!rect) return null;
+                          return (
+                            <div key={i} className="relative group">
+                              <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
+                                Part {i + 1}
+                              </div>
+                              <div
+                                className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
+                                style={{ width: `${Math.floor(800 / workshopCols)}px`, height: 'auto' }}
+                              >
+                                <div style={{
+                                  position: 'relative',
+                                  paddingBottom: `${(rect.h / rect.w) * 100}%`,
+                                  width: '100%'
+                                }}>
+                                  <img
+                                    src={previewSource || ''}
+                                    alt={`Part ${i}`}
+                                    style={{
+                                      position: 'absolute',
+                                      top: 0,
+                                      left: 0,
+                                      maxWidth: 'none',
+                                      width: `${(imageDimensions!.width / rect.w) * 100}%`,
+                                      height: '100%',
+                                      transform: `translateX(-${(i / workshopCols) * 100}%)` // Shift image
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                              <button
+                                onClick={() => downloadSegment(i)}
+                                disabled={isEncoding || isProcessingGif}
+                                className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
+                              >
+                                <div className="flex items-center gap-2 text-white font-semibold px-3 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                  <Download className="w-4 h-4" />
+                                </div>
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
                     ) : (
-                    /* ARTWORK / BACKGROUND PREVIEW */
-                    <div className="relative inline-flex gap-2">
-                      {/* Main Column Preview */}
-                      <div className="relative group">
-                        <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
+                      /* ARTWORK / BACKGROUND PREVIEW */
+                      <div className="relative inline-flex gap-2">
+                        {/* Main Column Preview */}
+                        <div className="relative group">
+                          <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
                             Main ({MAIN_WIDTH}px)
-                        </div>
-                        <div 
-                          className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
-                          style={{ width: `${MAIN_WIDTH}px`, height: Math.min(imageDimensions?.height || 500, 600) + 'px' }}
-                        >
-                          <img 
-                            src={previewSource || ''} 
-                            alt="Main Crop" 
-                            style={{ 
-                              maxWidth: 'none',
-                              height: imageDimensions?.height + 'px',
-                              transform: `translateX(-${getCropRect('main')?.x || 0}px)`
-                            }}
-                          />
-                        </div>
-                        <button 
-                          onClick={() => downloadSegment('main')}
-                          disabled={isEncoding || isProcessingGif}
-                          className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
-                        >
-                          <div className="flex items-center gap-2 text-white font-semibold px-4 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                            <Download className="w-5 h-5" />
-                            <span>Download Main</span>
                           </div>
-                        </button>
-                      </div>
+                          <div
+                            className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
+                            style={{ width: `${MAIN_WIDTH}px`, height: Math.min(imageDimensions?.height || 500, 600) + 'px' }}
+                          >
+                            <img
+                              src={previewSource || ''}
+                              alt="Main Crop"
+                              style={{
+                                maxWidth: 'none',
+                                height: imageDimensions?.height + 'px',
+                                transform: `translateX(-${getCropRect('main')?.x || 0}px)`
+                              }}
+                            />
+                          </div>
+                          <button
+                            onClick={() => downloadSegment('main')}
+                            disabled={isEncoding || isProcessingGif}
+                            className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
+                          >
+                            <div className="flex items-center gap-2 text-white font-semibold px-4 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                              <Download className="w-5 h-5" />
+                              <span>Download Main</span>
+                            </div>
+                          </button>
+                        </div>
 
-                      {/* Gap Visual */}
-                      <div className="w-[8px] h-full flex flex-col items-center gap-2 opacity-30 pt-10">
-                         {Array.from({ length: 8 }).map((_, i) => (
-                             <div key={i} className="w-[1px] h-8 bg-gray-500"></div>
-                         ))}
-                      </div>
+                        {/* Gap Visual */}
+                        <div className="w-[8px] h-full flex flex-col items-center gap-2 opacity-30 pt-10">
+                          {Array.from({ length: 8 }).map((_, i) => (
+                            <div key={i} className="w-[1px] h-8 bg-gray-500"></div>
+                          ))}
+                        </div>
 
-                      {/* Side Column Preview */}
-                      <div className="relative group">
-                        <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
+                        {/* Side Column Preview */}
+                        <div className="relative group">
+                          <div className="absolute -top-8 left-0 text-xs font-mono text-steam-blue bg-steam-card px-2 py-1 rounded border border-steam-accent shadow-sm">
                             Side ({SIDE_WIDTH}px)
-                        </div>
-                        <div 
-                          className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
-                          style={{ width: `${SIDE_WIDTH}px`, height: Math.min(imageDimensions?.height || 500, 600) + 'px' }}
-                        >
-                           <img 
-                            src={previewSource || ''} 
-                            alt="Side Crop" 
-                            style={{ 
-                              maxWidth: 'none',
-                              height: imageDimensions?.height + 'px',
-                              transform: `translateX(-${getCropRect('side')?.x || 0}px)`
-                            }}
-                          />
-                        </div>
-                        <button 
-                          onClick={() => downloadSegment('side')}
-                          disabled={isEncoding || isProcessingGif}
-                          className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
-                        >
-                           <div className="flex flex-col items-center gap-1 text-white font-semibold px-3 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                            <Download className="w-4 h-4" />
-                            <span className="text-xs">Side</span>
                           </div>
-                        </button>
+                          <div
+                            className="overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-500 transition-colors bg-black/40 shadow-2xl"
+                            style={{ width: `${SIDE_WIDTH}px`, height: Math.min(imageDimensions?.height || 500, 600) + 'px' }}
+                          >
+                            <img
+                              src={previewSource || ''}
+                              alt="Side Crop"
+                              style={{
+                                maxWidth: 'none',
+                                height: imageDimensions?.height + 'px',
+                                transform: `translateX(-${getCropRect('side')?.x || 0}px)`
+                              }}
+                            />
+                          </div>
+                          <button
+                            onClick={() => downloadSegment('side')}
+                            disabled={isEncoding || isProcessingGif}
+                            className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer backdrop-blur-sm"
+                          >
+                            <div className="flex flex-col items-center gap-1 text-white font-semibold px-3 py-2 bg-blue-600 rounded-lg shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                              <Download className="w-4 h-4" />
+                              <span className="text-xs">Side</span>
+                            </div>
+                          </button>
+                        </div>
                       </div>
-                    </div>
                     )}
                   </div>
                 </div>
@@ -709,16 +721,16 @@ const ArtworkSplitter: React.FC = () => {
                   <Info className="w-6 h-6 text-blue-600 dark:text-steam-blue shrink-0" />
                   <div className="text-sm text-gray-600 dark:text-steam-text space-y-1">
                     <p className="font-semibold text-gray-900 dark:text-white">
-                        Current Mode: {cropMode === 'background' ? 'Background Crop' : cropMode === 'workshop' ? 'Workshop Showcase' : 'Artwork Showcase'}
+                      Current Mode: {cropMode === 'background' ? 'Background Crop' : cropMode === 'workshop' ? 'Workshop Showcase' : 'Artwork Showcase'}
                     </p>
                     <p>
-                        {cropMode === 'background' && "Optimized for 1920x1080 backgrounds. The preview shows the center alignment used by Steam profiles."}
-                        {cropMode === 'artwork' && "Standard mode. Extracts the left 506px and the right 100px strip immediately."}
-                        {cropMode === 'workshop' && `Splits the image into ${workshopCols} equal vertical segments. Great for the Workshop Showcase or Screenshot Showcase.`}
+                      {cropMode === 'background' && "Optimized for 1920x1080 backgrounds. The preview shows the center alignment used by Steam profiles."}
+                      {cropMode === 'artwork' && "Standard mode. Extracts the left 506px and the right 100px strip immediately."}
+                      {cropMode === 'workshop' && `Splits the image into ${workshopCols} equal vertical segments. Great for the Workshop Showcase or Screenshot Showcase.`}
                     </p>
                   </div>
                 </div>
-                
+
                 {/* GIF Frame Extraction Section */}
                 {isGif && (
                   <div className="mt-8 border-t border-gray-200 dark:border-white/10 pt-8">
@@ -737,7 +749,7 @@ const ArtworkSplitter: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     {extractedFrames.length > 0 ? (
                       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-4">
                         {/* Only show first 32 frames to avoid DOM overload if massive, or simple pagination */}
@@ -748,7 +760,7 @@ const ArtworkSplitter: React.FC = () => {
                             </div>
                             <div className="text-center">
                               <span className="text-xs text-gray-500 dark:text-steam-text block mb-2">Frame {index + 1} ({frame.delay}ms)</span>
-                              <button 
+                              <button
                                 onClick={() => downloadFrame(frame.url, index)}
                                 className="w-full py-1 bg-blue-100 dark:bg-steam-accent hover:bg-blue-600 hover:text-white text-blue-600 dark:text-steam-blue text-xs rounded transition-colors flex items-center justify-center gap-1"
                               >
@@ -759,17 +771,17 @@ const ArtworkSplitter: React.FC = () => {
                           </div>
                         ))}
                         {extractedFrames.length > 32 && (
-                            <div className="flex flex-col items-center justify-center text-gray-500 dark:text-steam-text text-sm p-4 bg-gray-100 dark:bg-white/5 rounded-lg">
-                                <span className="font-bold">+{extractedFrames.length - 32} more</span>
-                                <span>frames available</span>
-                            </div>
+                          <div className="flex flex-col items-center justify-center text-gray-500 dark:text-steam-text text-sm p-4 bg-gray-100 dark:bg-white/5 rounded-lg">
+                            <span className="font-bold">+{extractedFrames.length - 32} more</span>
+                            <span>frames available</span>
+                          </div>
                         )}
                       </div>
                     ) : (
                       !isProcessingGif && (
-                         <div className="text-center py-10 text-gray-500 dark:text-steam-text bg-gray-50 dark:bg-black/20 rounded-xl border border-dashed border-gray-200 dark:border-white/5">
-                           Could not extract frames from this GIF.
-                         </div>
+                        <div className="text-center py-10 text-gray-500 dark:text-steam-text bg-gray-50 dark:bg-black/20 rounded-xl border border-dashed border-gray-200 dark:border-white/5">
+                          Could not extract frames from this GIF.
+                        </div>
                       )
                     )}
                   </div>
@@ -777,16 +789,90 @@ const ArtworkSplitter: React.FC = () => {
               </div>
             )}
           </div>
-          
+
           {/* Ad Space */}
           <div className="mt-8">
             <AdUnit type="banner" />
           </div>
         </div>
       </div>
-      
+
       {/* Hidden Canvas for processing */}
       <canvas ref={canvasRef} className="hidden" />
+
+      {/* Upload Guide Modal */}
+      {showGuide && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setShowGuide(false)}>
+          <div className="bg-white dark:bg-[#1b2838] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200 dark:border-steam-accent" onClick={e => e.stopPropagation()}>
+            <div className="p-6 border-b border-gray-200 dark:border-white/10 flex items-center justify-between sticky top-0 bg-inherit z-10">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                <HelpCircle className="w-6 h-6 text-yellow-500" />
+                How to Upload to Steam
+              </h3>
+              <button onClick={() => setShowGuide(false)} className="text-gray-500 hover:text-gray-700 dark:text-steam-text dark:hover:text-white">
+                ✕
+              </button>
+            </div>
+
+            <div className="p-6 space-y-6 text-gray-700 dark:text-gray-300">
+
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 flex items-start gap-3">
+                <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                <p className="text-sm">
+                  <strong>Important:</strong> Do not upload the ZIP file directly! Unzip it first and upload each image file (Main, Side, or Parts) individually.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="font-bold text-lg text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-2">
+                  For Long Artwork (Standard Mode)
+                </h4>
+                <ol className="list-decimal list-inside space-y-3 ml-2">
+                  <li>Go to <a href="https://steamcommunity.com/sharedfiles/edititem/767/3/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Steam Artwork Upload Page</a> in your browser (Chrome/Firefox).</li>
+                  <li>Upload your <strong>Main</strong> or <strong>Side</strong> image.</li>
+                  <li>Right-click anywhere on the page and select <strong>Inspect</strong> (or press F12).</li>
+                  <li>Go to the <strong>Console</strong> tab.</li>
+                  <li>Paste the following code and press <strong>Enter</strong>:</li>
+                </ol>
+
+                <div className="relative bg-gray-900 rounded-lg p-4 font-mono text-sm text-green-400 overflow-x-auto border border-gray-700">
+                  <code>document.getElementsByName("image_width")[0].value = 999999; document.getElementsByName("image_height")[0].value = 1;</code>
+                  <button
+                    onClick={() => navigator.clipboard.writeText('document.getElementsByName("image_width")[0].value = 999999; document.getElementsByName("image_height")[0].value = 1;')}
+                    className="absolute top-2 right-2 p-2 bg-white/10 hover:bg-white/20 rounded text-white transition-colors"
+                    title="Copy Code"
+                  >
+                    <Copy className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/10 p-3 rounded border border-yellow-200 dark:border-yellow-800/30">
+                  <AlertTriangle className="w-4 h-4 shrink-0" />
+                  <p>You must run this code for <strong>EACH</strong> piece (Main and Side) before clicking "Save and Continue". This fixes the "short" artwork bug.</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 pt-4">
+                <h4 className="font-bold text-lg text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-2">
+                  For Workshop Showcase (Split Mode)
+                </h4>
+                <p className="text-sm">
+                  Upload each part as a separate Workshop item. No console code is usually needed for Workshop items unless you are doing a specific tall-image trick, but usually, just uploading them in order is enough.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 border-t border-gray-200 dark:border-white/10 flex justify-end">
+              <button
+                onClick={() => setShowGuide(false)}
+                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
+              >
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

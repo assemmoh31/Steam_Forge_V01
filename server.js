@@ -30,7 +30,107 @@ console.log('STEAM_API_KEY Loaded:', STEAM_API_KEY ? `Yes (starts with ${STEAM_A
 app.use(cors());
 app.use(express.json());
 
+// --- UPLOAD CONFIGURATION ---
+import multer from 'multer';
+
+// Ensure uploads directory exists
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+// Multer Storage
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, uploadDir)
+    },
+    filename: function (req, file, cb) {
+        // Sanitize filename to prevent issues
+        const safeName = file.originalname.replace(/[^a-zA-Z0-9.]/g, '_');
+        cb(null, Date.now() + '-' + safeName)
+    }
+})
+
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 50 * 1024 * 1024 }, // Increased to 50MB
+    fileFilter: (req, file, cb) => {
+        const allowedTypes = /jpeg|jpg|png|gif|zip/;
+        const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+        if (extname) {
+            return cb(null, true);
+        } else {
+            cb(new Error('Only images (jpg, png, gif) and ZIP files are allowed!'));
+        }
+    }
+}).single('file'); // Define as single here to usage in route
+
+// Serve uploads statically
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Simple JSON DB for Artwork
+const DB_FILE = path.join(__dirname, 'artwork.json');
+if (!fs.existsSync(DB_FILE)) {
+    fs.writeFileSync(DB_FILE, JSON.stringify([]));
+}
+
 // --- ROUTES ---
+
+// 0. Artwork Routes
+app.get('/api/artwork', (req, res) => {
+    try {
+        const data = JSON.parse(fs.readFileSync(DB_FILE));
+        res.json(data);
+    } catch (error) {
+        console.error('Fetch error:', error);
+        res.status(500).json({ error: 'Failed to fetch artwork' });
+    }
+});
+
+app.post('/api/artwork', (req, res) => {
+    upload(req, res, function (err) {
+        if (err instanceof multer.MulterError) {
+            // A Multer error occurred when uploading.
+            console.error('Multer error:', err);
+            return res.status(400).json({ error: `Upload error: ${err.message}` });
+        } else if (err) {
+            // An unknown error occurred when uploading.
+            console.error('Unknown upload error:', err);
+            return res.status(400).json({ error: err.message });
+        }
+
+        // Everything went fine.
+        try {
+            if (!req.file) {
+                return res.status(400).json({ error: 'No file uploaded' });
+            }
+            const { title, description } = req.body;
+
+            const newArtwork = {
+                id: Date.now().toString(),
+                title: title || 'Untitled',
+                description: description || '',
+                filename: req.file.filename,
+                originalName: req.file.originalname,
+                mimetype: req.file.mimetype,
+                uploadedAt: new Date().toISOString(),
+                size: req.file.size
+            };
+
+            let data = [];
+            if (fs.existsSync(DB_FILE)) {
+                data = JSON.parse(fs.readFileSync(DB_FILE));
+            }
+            data.unshift(newArtwork); // Add to top
+            fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+
+            res.json(newArtwork);
+        } catch (error) {
+            console.error('Upload processing error:', error);
+            res.status(500).json({ error: 'Upload failed: ' + error.message });
+        }
+    });
+});
 
 // 1. Get Player Summaries (Avatar, Name, Status)
 app.get('/api/steam/player/:steamid', async (req, res) => {
