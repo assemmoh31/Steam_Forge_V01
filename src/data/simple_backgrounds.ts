@@ -6,7 +6,7 @@
 export const SIMPLE_BACKGROUNDS = [
     {
         "name": "Glitch Sansui-zu",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward102811.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/102811.gif",
         "tags": [
             "Black",
             "White",
@@ -17,7 +17,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Watchers",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103201.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103201.gif",
         "tags": [
             "Dark",
             "Black",
@@ -26,7 +26,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Cyberpsychosis",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward121149.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/121149.gif",
         "tags": [
             "Red",
             "Cyberpunk",
@@ -35,7 +35,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Rogue AI",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward121150.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/121150.gif",
         "tags": [
             "Red",
             "Cyberpunk",
@@ -44,7 +44,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "The boys",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward151851.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/151851.gif",
         "tags": [
             "Anime",
             "Blue"
@@ -52,7 +52,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "MUSE RADIO",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward223914.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/223914.gif",
         "tags": [
             "Pink",
             "Anime",
@@ -61,7 +61,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "It's Winter - Bus Stop",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward242610.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/242610.gif",
         "tags": [
             "Blue",
             "White"
@@ -69,14 +69,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Circle of Hell",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward258546.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/258546.gif",
         "tags": [
             "Red"
         ]
     },
     {
         "name": "Snowy Sanctuary",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward352130.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/352130.gif",
         "tags": [
             "White",
             "Anime"
@@ -84,7 +84,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "ONCE HUMAN - Background",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward352259.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/352259.gif",
         "tags": [
             "Dark",
             "Sci-Fi",
@@ -93,7 +93,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "MiG-29",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward392594.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/392594.gif",
         "tags": [
             "Grey",
             "War",
@@ -102,7 +102,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Sparking Fire And Flame 01",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward400367.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/400367.gif",
         "tags": [
             "Red",
             "Yellow"
@@ -110,14 +110,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Blue-Tiled onsen",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward412107.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/412107.gif",
         "tags": [
             "Blue"
         ]
     },
     {
         "name": "RebellionGODSOUL-U No1 handsome！",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward413020.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/413020.gif",
         "tags": [
             "Red",
             "Blue",
@@ -126,7 +126,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Rebellion GodSoul – Greedy Neko Kami & Myth~",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward413021.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/413021.gif",
         "tags": [
             "Anime",
             "Fantasy",
@@ -136,7 +136,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Rebellion GodSoul - Faith: Mirage of Water Mirror",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward413022.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/413022.gif",
         "tags": [
             "Blue",
             "Red",
@@ -145,14 +145,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Cosmic Serenity",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416408.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416408.gif",
         "tags": [
             "Space"
         ]
     },
     {
         "name": "Dream City",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416409.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416409.gif",
         "tags": [
             "Cyberpunk",
             "Neon"
@@ -160,14 +160,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Endless Summer",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416410.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416410.gif",
         "tags": [
             "Yellow"
         ]
     },
     {
         "name": "Sunset Cruise",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416414.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416414.gif",
         "tags": [
             "Orange",
             "Yellow",
@@ -176,7 +176,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Status Difference",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward427950.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/427950.gif",
         "tags": [
             "Anime",
             "Romance"
@@ -184,7 +184,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "The Crossroads Between Realms",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward430389.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/430389.gif",
         "tags": [
             "Fantasy",
             "Mystery"
@@ -192,7 +192,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Mount Olympus",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward430392.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/430392.gif",
         "tags": [
             "Fantasy",
             "God",
@@ -201,14 +201,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Black Hole",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward78810.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/78810.gif",
         "tags": [
             "Black"
         ]
     },
     {
         "name": "Chocola Vanilla",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103243.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103243.gif",
         "tags": [
             "Anime",
             "Cute",
@@ -218,14 +218,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Noise",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103766.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103766.gif",
         "tags": [
             "Uncategorized"
         ]
     },
     {
         "name": "Red Sparks",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104050.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104050.gif",
         "tags": [
             "Red",
             "Yellow"
@@ -233,14 +233,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Cockroach Party",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward117139.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/117139.gif",
         "tags": [
             "Uncategorized"
         ]
     },
     {
         "name": "Consumerism",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward121148.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/121148.gif",
         "tags": [
             "Cyberpunk",
             "Dark"
@@ -248,7 +248,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Mantra",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward122356.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/122356.gif",
         "tags": [
             "Sci-Fi",
             "Red"
@@ -256,21 +256,21 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "⚡️ Gamedust - Inner Plasma",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward122865.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/122865.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "First",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward123894.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/123894.gif",
         "tags": [
             "Abstract"
         ]
     },
     {
         "name": "Preparing for Battle",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward150370.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/150370.gif",
         "tags": [
             "Black",
             "Fantasy",
@@ -279,7 +279,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Cat (Tonia)",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward170135.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/170135.gif",
         "tags": [
             "Nature",
             "White"
@@ -287,7 +287,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Oil Rig",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward170420.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/170420.gif",
         "tags": [
             "Grey",
             "Industrial",
@@ -296,7 +296,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Goop Background",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward174335.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/174335.gif",
         "tags": [
             "Green",
             "Slime"
@@ -304,21 +304,21 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Swaying Grass",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward186213.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/186213.gif",
         "tags": [
             "Green"
         ]
     },
     {
         "name": "ClariseShow",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward198708.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/198708.gif",
         "tags": [
             "Uncategorized"
         ]
     },
     {
         "name": "Code_Background",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward211153.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/211153.gif",
         "tags": [
             "Cyberpunk",
             "Green",
@@ -327,7 +327,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Nightmare Reaper Animation 1",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward224710.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/224710.gif",
         "tags": [
             "Black",
             "Dark",
@@ -337,7 +337,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Energy",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward229136.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/229136.gif",
         "tags": [
             "Blue",
             "Electric"
@@ -345,7 +345,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Ashen Hush",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward244361.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/244361.gif",
         "tags": [
             "Grey",
             "Dark"
@@ -353,7 +353,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Meow Mail",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward273942.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/273942.gif",
         "tags": [
             "Cute",
             "Cat",
@@ -362,7 +362,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Living Together&In The Lake",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward298939.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/298939.gif",
         "tags": [
             "Blue",
             "Anime",
@@ -371,7 +371,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "The Season of Cherry Blossoms",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward312019.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/312019.gif",
         "tags": [
             "Blue",
             "Pink"
@@ -379,7 +379,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Arlathan Forest",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward335159.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/335159.gif",
         "tags": [
             "Green",
             "Nature",
@@ -389,7 +389,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "🕸️ Juggler Games - Web of Gold",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward336404.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/336404.gif",
         "tags": [
             "Yellow",
             "Dark",
@@ -398,7 +398,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Multiplayer Profile",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward402022.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/402022.gif",
         "tags": [
             "Blue",
             "Tech"
@@ -406,7 +406,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Khazan Netherworld",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward402450.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/402450.gif",
         "tags": [
             "Dark",
             "Red"
@@ -414,7 +414,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Aliya Autumn",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward407036.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/407036.gif",
         "tags": [
             "Orange",
             "Anime"
@@ -422,7 +422,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Rebellion GodSoul - Lincy: Tale of Painted Dreams",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward413023.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/413023.gif",
         "tags": [
             "Red",
             "Blue",
@@ -431,7 +431,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Red Space Beach",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416411.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416411.gif",
         "tags": [
             "Red",
             "Black",
@@ -442,14 +442,14 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Seaside",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416413.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416413.gif",
         "tags": [
             "Blue"
         ]
     },
     {
         "name": "Wicke's Haunted Home",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward421216.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/421216.gif",
         "tags": [
             "Dark",
             "Haunted",
@@ -458,7 +458,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Starry Night",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward79782.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/79782.gif",
         "tags": [
             "Yellow",
             "Black",
@@ -467,7 +467,7 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Ink",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward80045.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/80045.gif",
         "tags": [
             "Black",
             "White",
@@ -476,518 +476,518 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Steam Background 102211",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward102211.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/102211.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103163",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103163.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103163.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103165",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103165.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103165.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103167",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103167.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103167.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103337",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103337.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103337.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103758",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103758.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103758.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103764",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103764.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103764.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103825",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103825.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103825.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103826",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103826.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103826.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 103973",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward103973.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/103973.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104051",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104051.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104051.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104052",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104052.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104052.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104088",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104088.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104088.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104091",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104091.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104091.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104245",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104245.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104245.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 104246",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward104246.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/104246.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 105849",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward105849.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/105849.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 107439",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward107439.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/107439.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 110740",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward110740.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/110740.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 110741",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward110741.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/110741.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 112525",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward112525.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/112525.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 113302",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward113302.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/113302.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 115264",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward115264.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/115264.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 115631",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward115631.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/115631.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 116715",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward116715.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/116715.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 116850",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward116850.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/116850.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 117138",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward117138.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/117138.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 117655",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward117655.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/117655.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 119379",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward119379.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/119379.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 119380",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward119380.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/119380.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 122867",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward122867.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/122867.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 122868",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward122868.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/122868.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 124596",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward124596.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/124596.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 125682",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward125682.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/125682.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 126687",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward126687.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/126687.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 126688",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward126688.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/126688.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 126689",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward126689.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/126689.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 128982",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward128982.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/128982.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 135956",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward135956.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/135956.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 135957",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward135957.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/135957.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 135958",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward135958.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/135958.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 143549",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward143549.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/143549.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 150305",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward150305.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/150305.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 150364",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward150364.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/150364.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 150471",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward150471.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/150471.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 152142",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward152142.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/152142.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 153549",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward153549.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/153549.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 153570",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward153570.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/153570.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 156354",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward156354.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/156354.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 156596",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward156596.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/156596.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 160576",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward160576.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/160576.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 160995",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward160995.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/160995.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164747",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164747.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164747.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164748",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164748.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164748.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164749",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164749.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164749.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164756",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164756.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164756.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164758",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164758.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164758.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 164766",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward164766.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/164766.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 165465",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward165465.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/165465.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 167120",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward167120.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/167120.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 170404",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward170404.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/170404.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 170406",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward170406.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/170406.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 172513",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward172513.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/172513.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 176165",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward176165.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/176165.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 179955",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward179955.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/179955.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 179957",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward179957.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/179957.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 181167",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward181167.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/181167.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 187342",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward187342.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/187342.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 190991",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward190991.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/190991.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 190992",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward190992.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/190992.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 193294",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward193294.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/193294.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 194485",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward194485.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/194485.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 196047",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward196047.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/196047.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 198072",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward198072.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/198072.gif",
         "tags": [
             "Grey",
             "Retro"
@@ -995,581 +995,581 @@ export const SIMPLE_BACKGROUNDS = [
     },
     {
         "name": "Steam Background 198710",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward198710.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/198710.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 215590",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward215590.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/215590.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 222365",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward222365.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/222365.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 224711",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward224711.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/224711.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 229140",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward229140.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/229140.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 233846",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward233846.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/233846.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 240949",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward240949.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/240949.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 244151",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward244151.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/244151.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 244359",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward244359.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/244359.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 258543",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward258543.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/258543.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 273339",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward273339.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/273339.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 276406",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward276406.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/276406.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 282415",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward282415.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/282415.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286504",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286504.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286504.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286506",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286506.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286506.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286507",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286507.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286507.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286509",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286509.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286509.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286510",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286510.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286510.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 286512",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward286512.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/286512.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 289574",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward289574.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/289574.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 293460",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward293460.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/293460.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 293508",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward293508.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/293508.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 295420",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward295420.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/295420.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 295871",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward295871.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/295871.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 295898",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward295898.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/295898.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 297369",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward297369.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/297369.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 297370",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward297370.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/297370.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 299350",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward299350.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/299350.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 303135",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward303135.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/303135.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 303137",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward303137.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/303137.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 304907",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward304907.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/304907.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 311298",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward311298.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/311298.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 312014",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward312014.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/312014.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 312017",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward312017.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/312017.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 313792",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward313792.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/313792.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 313793",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward313793.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/313793.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 313798",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward313798.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/313798.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 315899",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward315899.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/315899.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 315915",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward315915.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/315915.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 315916",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward315916.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/315916.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 316261",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward316261.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/316261.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 316263",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward316263.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/316263.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 317663",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward317663.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/317663.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 333498",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward333498.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/333498.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 335162",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward335162.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/335162.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 335165",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward335165.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/335165.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 338553",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward338553.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/338553.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 342139",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward342139.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/342139.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 351688",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward351688.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/351688.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 374211",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward374211.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/374211.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 379680",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward379680.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/379680.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 387885",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward387885.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/387885.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 390594",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward390594.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/390594.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 391163",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward391163.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/391163.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 391165",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward391165.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/391165.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 394956",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward394956.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/394956.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 394958",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward394958.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/394958.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 397388",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward397388.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/397388.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 398730",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward398730.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/398730.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 399065",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward399065.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/399065.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 400410",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward400410.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/400410.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 400555",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward400555.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/400555.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 402451",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward402451.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/402451.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 407035",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward407035.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/407035.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 412052",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward412052.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/412052.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 412071",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward412071.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/412071.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 413766",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward413766.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/413766.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 416412",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416412.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416412.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 416415",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416415.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416415.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 416416",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward416416.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/416416.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 418720",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward418720.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/418720.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 419957",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward419957.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/419957.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 423124",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward423124.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/423124.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 427203",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward427203.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/427203.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 427204",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward427204.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/427204.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 427575",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward427575.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/427575.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 430756",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward430756.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/430756.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 430758",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward430758.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/430758.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 432503",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward432503.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/432503.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 78809",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward78809.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/78809.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 78811",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward78811.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/78811.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 80038",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward80038.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/80038.gif",
         "tags": [
             "Grey"
         ]
     },
     {
         "name": "Steam Background 80042",
-        "image": "https://pub-787414be341248f8b0766235f16d2bf7.r2.dev/httpsstore.steampowered.compointsshopcbackgroundsreward80042.gif",
+        "image": "https://cdn.steamprofileforge.art/gifs/80042.gif",
         "tags": [
             "Grey"
         ]

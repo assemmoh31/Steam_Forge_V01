@@ -52,7 +52,7 @@ const generateTags = (name: string): string[] => {
 
 export const LOCAL_BACKGROUNDS: BackgroundItem[] = SIMPLE_BACKGROUNDS.map((bg, index) => {
     // Try to extract the reward ID from the filename (e.g. ...reward12345.gif)
-    const match = bg.image.match(/reward(\d+)/);
+    const match = bg.image.match(/\/gifs\/(\d+)\.gif/);
     const rewardId = match ? match[1] : undefined;
 
     return {
