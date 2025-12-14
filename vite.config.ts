@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   console.log('VITE_GEMINI_API_KEY present:', !!env.VITE_GEMINI_API_KEY);
   console.log('----------------------');
   return {
-    base: '/Steam_Forge_V01/', // Absolute base path for GitHub Pages
+    base: './', // Relative base path for custom domain compatibility
     server: {
       port: 3000,
       host: '0.0.0.0',
